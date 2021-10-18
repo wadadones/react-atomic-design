@@ -1,22 +1,22 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { PrimaryButton } from "../atoms/button/PrimaryButton";
-import { SecondaryButton } from "../atoms/button/SecondaryButton";
-import { Header } from "../atoms/layout/Header";
-import { SearchInput } from "../molecules/SearchInput";
+import { Top } from "../pages/Top";
+import { Users } from "../pages/Users";
+import { DefaultLayout } from "../templates/DefaultLayout";
+import { HeaderOnly } from "../templates/HeaderOnly";
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Header />
-          Home
-          <PrimaryButton>Primary Button</PrimaryButton>
-          <SecondaryButton>Secondary Button</SecondaryButton>
-          <SearchInput />
+          <DefaultLayout>
+            <Top />
+          </DefaultLayout>
         </Route>
         <Route path="/users">
-          Users
+          <HeaderOnly>
+            <Users />
+          </HeaderOnly>
         </Route>
       </Switch>
     </BrowserRouter>
